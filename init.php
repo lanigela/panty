@@ -73,6 +73,11 @@ function woo_save_embed_video( $attachment_id ) {
     }
 }
 
+function remove_thumbnail_html($html){
+    $html = '';
+    return $html;
+}
+
 function woo_scripts_styles() {
     $enable_lightbox = get_option( 'woocommerce_enable_lightbox' );   ?>
     <style>
