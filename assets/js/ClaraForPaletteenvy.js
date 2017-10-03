@@ -27,7 +27,7 @@ function loadPlayer(scene, params) {
   const presets = configuratorJSON.presets;
   if (!presets) return;
   for (var i = presets.length - 1; i >= 0; i--) {
-    if (params.product_name.toLowerCase().includes(presets[i].name)) {
+    if (params.product_name.toLowerCase().includes(presets[i].name.toLowerCase())) {
       if (!window.clara) {
         var clara = claraplayer('clara-embed');
 
