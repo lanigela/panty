@@ -35,10 +35,10 @@ function loadPlayer(scene, params) {
         clara.on('loaded', () => {
           window.clara = clara;
         });
-
-        clara.sceneIO.fetchAndUse(clarauuid).then(()=>{
-          // set thumbnail
-          clara.player.displayThumbnail(true, {preset: presets[i].name});
+        clara.sceneIO.fetch(clarauuid).then(()=>{
+          clara.sceneIO.useScene(clarauuid);
+          clara.player.displayThumbnail(true, {preset: presets[i].name, width: 400
+            , height: 300});
           ['fullscreen', 'home', 'vrSettings', 'orbit', 'zoom'].map(
             clara.player.hideTool
           );
