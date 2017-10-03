@@ -11,12 +11,19 @@ function getJSON(path, success, params) {
 }
 
 function searchJSON(src, target) {
-  for (var key in src) {
-    if (key === target) {
-      return src[target];
+  if(Array.isArray(src)) {
+    for (var i = src.length - 1; i >= 0; i--) {
+      searchJSON(src[i], target);
     }
-    else {
-      searchJSON(src[target], target);
+  }
+  else {
+    for (var key in src) {
+      if (key === target) {
+        return src[target];
+      }
+      else {
+        searchJSON(src[target], target);
+      }
     }
   }
   return null;
@@ -24,7 +31,7 @@ function searchJSON(src, target) {
 
 function loadPlayer(scene, productName) {
   // process scene json to get presets
-  const configurator = searchJSON(scene, 'configurator');
+  const configurator = searchJSON(scene.plugs, 'configurator');
   if (!configurator)  return;
   const configuratorJSON = JSON.parse(configurator);
   const presets = configuratorJSON.presets;
