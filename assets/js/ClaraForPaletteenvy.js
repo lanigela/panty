@@ -29,6 +29,9 @@ function loadPlayer(scene, params) {
   for (var i = presets.length - 1; i >= 0; i--) {
     if (params.product_name.toLowerCase().includes(presets[i].name.toLowerCase())) {
       if (!window.clara) {
+        // restore window.URL
+        const savedURL = window.URL;
+        window.URL = window.webkitURL;
         var clara = claraplayer('clara-embed');
 
         clara.on('loaded', () => {
