@@ -24,8 +24,7 @@ function searchJSON(src, target) {
 
 function loadPlayer(scene, productName) {
   // process scene json to get presets
-  const sceneJSON = JSON.parse(scene);
-  const configurator = searchJSON(sceneJSON, 'configurator');
+  const configurator = searchJSON(scene, 'configurator');
   if (!configurator)  return;
   const configuratorJSON = JSON.parse(configurator);
   const presets = configuratorJSON.presets;
