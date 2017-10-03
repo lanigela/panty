@@ -34,13 +34,14 @@ if ( ! function_exists(woocommerce_template_single_clara) ) {
     global $product;
     load_template(rtrim(plugin_dir_path(__FILE__),'/') . '/templates/single-product/clara-player.php');
 
+    wp_enqueue_script( 'claraPlayer', 'https://clara.io/js/claraplayer.min.js');
     // load scripts to init clara player
-    wp_enqueue_script( 'claraPlayer', rtrim(plugin_dir_url(__FILE__),'/') . '/assets/js/ClaraForPaletteenvy.js');
+    wp_enqueue_script( 'claraPlayerControl', rtrim(plugin_dir_url(__FILE__),'/') . '/assets/js/ClaraForPaletteenvy.js');
     $dataToBePassed = array(
       'name' => $product->get_name()
     );
     // variables will be json encoded here
-    wp_localize_script('claraPlayer', 'php_vars', $dataToBePassed);
+    wp_localize_script('claraPlayerControl', 'php_vars', $dataToBePassed);
   }
 }
 
