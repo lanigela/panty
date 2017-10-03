@@ -11,19 +11,9 @@ function getJSON(path, success, params) {
 }
 
 function searchJSON(src, target) {
-  if(Array.isArray(src)) {
-    for (var i = src.length - 1; i >= 0; i--) {
-      searchJSON(src[i], target);
-    }
-  }
-  else {
-    for (var key in src) {
-      if (key === target) {
-        return src[target];
-      }
-      else {
-        searchJSON(src[target], target);
-      }
+  for (var i = src.length - 1; i >= 0; i--) {
+    if(src[i].type === 'Player') {
+      return src[i].operators[0].configurator;
     }
   }
   return null;
