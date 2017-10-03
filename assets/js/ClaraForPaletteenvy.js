@@ -19,7 +19,7 @@ function searchJSON(src, target) {
   return null;
 }
 
-function loadPlayer(scene, productName) {
+function loadPlayer(scene, params) {
   // process scene json to get presets
   const configurator = searchJSON(scene.plugs, 'configurator');
   if (!configurator)  return;
@@ -27,7 +27,7 @@ function loadPlayer(scene, productName) {
   const presets = configuratorJSON.presets;
   if (!presets) return;
   for (var i = presets.length - 1; i >= 0; i--) {
-    if (productName.toLowerCase().includes(presets[i].name)) {
+    if (params.product_name.toLowerCase().includes(presets[i].name)) {
       if (!window.clara) {
         var clara = claraplayer('clara-embed');
 
@@ -56,7 +56,7 @@ function loadPlayer(scene, productName) {
 
 function initClara(params) {
   // fetch preset names
-  getJSON('https://clara.io/api/scenes/' + clarauuid, loadPlayer, params);
+  getJSON('https://clara.io/api/scenes/' + clarauuid, loadPlayer, params.);
 }
 
 (function() {
