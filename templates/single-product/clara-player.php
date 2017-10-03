@@ -13,6 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div id="clara-embed" style="height:200px"></div>
+<div id="clara-embed"></div>
 
 
