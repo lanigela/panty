@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Threekit for PaletteEnvy
  * Description: Threekit for PaletteEnvy
- * Version: 1.0.0
- * Author: Daniel Zhou
- * Author URI: daniel@exocortex.com
+ * Version: 1.0.1
+ * Author: Exocortex
+ * Author URI: exocortex.com
  * Developer: Exocortex
  * Developer URI: http://exocortex.com/
  * Text Domain: Threekit-for-PaletteEnvy
