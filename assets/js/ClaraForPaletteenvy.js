@@ -47,6 +47,8 @@ function loadPlayer(scene, params) {
             mobileOnly: true,
             touchVerticalDefault: true
           });
+
+          clara.configurator.applyPreset(presets[i].name);
         });
       }
       break;
