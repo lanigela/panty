@@ -56,7 +56,7 @@ function loadPlayer(scene, params) {
 
 function initClara(params) {
   // fetch preset names
-  getJSON('https://clara.io/api/scenes/' + clarauuid, loadPlayer, params.);
+  getJSON('https://clara.io/api/scenes/' + clarauuid, loadPlayer, params);
 }
 
 (function() {
