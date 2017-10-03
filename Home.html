@@ -16,8 +16,18 @@ if(!window.clara) {
 	});
 
 	// Fetch and initialize the sceneId
-	clara.sceneIO.fetchAndUse("7ef4fd45-fded-4f58-a73f-b5fbf519ddea").then( () => {
-	
+	//clara.sceneIO.fetchAndUse("7ef4fd45-fded-4f58-a73f-b5fbf519ddea").then( () => {
+	clara.sceneIO.fetchAndUse("89cf361e-b632-42b3-bd90-3dde405062ec").then( () => {
+		  ['fullscreen', 'home', 'vrSettings', 'orbit', 'zoom', 'tour'].map(
+			clara.player.hideTool
+		  );
+		  ['pan'].map(clara.player.removeTool);
+
+		  clara.commands.setCommandOptions('orbit', {
+			turnTable: true,
+			mobileOnly: true,
+			touchVerticalDefault: true,
+		  });
 		  
 	});
 }	
