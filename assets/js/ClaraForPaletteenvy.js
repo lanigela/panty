@@ -37,6 +37,8 @@ function loadPlayer(scene, params) {
         });
 
         clara.sceneIO.fetchAndUse(clarauuid).then(()=>{
+          // set thumbnail
+          clara.player.displayThumbnail(true, {preset: presets[i].name});
           ['fullscreen', 'home', 'vrSettings', 'orbit', 'zoom'].map(
             clara.player.hideTool
           );
