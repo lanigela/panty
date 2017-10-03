@@ -49,6 +49,14 @@ function loadPlayer(scene, params) {
           });
 
           clara.configuration.applyPreset(presets[i].name);
+
+          //listen to option change
+          const lengthDropdown = document.getElementsByName('product_options[length]');
+          if (lengthDropdown) {
+            lengthDropdown[0].addEventListener('change', (ev) => {
+              clara.configuration.executeAttribute('Length', ev.target.value);
+            });
+          }
         });
       }
       break;
