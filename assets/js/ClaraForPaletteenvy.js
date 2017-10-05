@@ -40,8 +40,8 @@ function loadPlayer(scene, params) {
           clara.player.displayThumbnail(true, {preset: presets[i].name, width: 400
             , height: 300});
 
-          //clara.configuration.initConfiguration({productTour: false});
-          clara.configuration.initConfiguration({form: "PaletteEnvy - Length Preset"});
+          clara.configuration.initConfiguration({productTour: false});
+          //clara.configuration.initConfiguration({form: "PaletteEnvy - Length Preset"});
 
           ['fullscreen', 'home', 'vrSettings', 'orbit', 'zoom'].map(
             clara.player.hideTool

@@ -16,20 +16,22 @@ if(!window.clara) {
 	});
 
 	// Fetch and initialize the sceneId
-	//clara.sceneIO.fetchAndUse("7ef4fd45-fded-4f58-a73f-b5fbf519ddea").then( () => {
-	clara.sceneIO.fetch("89cf361e-b632-42b3-bd90-3dde405062ec").then( () => {
-		  clara.sceneIO.useScene("89cf361e-b632-42b3-bd90-3dde405062ec");
+	clara.sceneIO.fetch("7ef4fd45-fded-4f58-a73f-b5fbf519ddea").then( () => {
+	//clara.sceneIO.fetch("89cf361e-b632-42b3-bd90-3dde405062ec").then( () => {
+		  clara.sceneIO.useScene("7ef4fd45-fded-4f58-a73f-b5fbf519ddea");
 		  ['fullscreen', 'home', 'vrSettings', 'orbit', 'zoom', 'tour'].map(
 			clara.player.hideTool
 		  );
 		  ['pan'].map(clara.player.removeTool);
+
+      clara.configuration.initConfigurator({ form: 'Tour' });
 
 		  clara.commands.setCommandOptions('orbit', {
 			turnTable: true,
 			mobileOnly: true,
 			touchVerticalDefault: true,
 		  });
-		  
+
 		  clara.commands.addCommand({
             enabled: true,
             active: true,
@@ -48,9 +50,9 @@ if(!window.clara) {
               },
             }
           }, 'planeRotate');
-		  
+
 	});
-}	
+}
 </script>
 </body>
 </html>
