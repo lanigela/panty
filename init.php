@@ -48,8 +48,8 @@ if ( ! function_exists(woocommerce_template_single_clara) ) {
 
 if( ! function_exists(threekit_enqueue_css) ) {
   function threekit_enqueue_css($styles) {
-    wp_register_style( 'threekit-woocommerce-css', rtrim(plugin_dir_path(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
-    wp_enqueue_style( 'threekit-woocommerce-css' );
+    //wp_register_style( 'threekit-woocommerce-css', rtrim(plugin_dir_path(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
+    wp_enqueue_style( 'threekit-woocommerce-css', rtrim(plugin_dir_path(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
     return $styles;
   }
 }
