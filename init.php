@@ -58,6 +58,7 @@ if ( ! function_exists(woocommerce_template_single_clara_filter ) ) {
     );
     // variables will be json encoded here
     wp_localize_script('claraPlayerControl', 'php_vars', $dataToBePassed);
+    return $html;
   }
 }
 
