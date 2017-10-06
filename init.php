@@ -25,9 +25,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 $active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
 if ( in_array( 'woocommerce/woocommerce.php', $active_plugins) ) {
   // Put your plugin code here
-  // add player after single_excerpt(short description) and single_meta
-  add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_clara', 10 );
-  add_action( 'wp_enqueue_scripts', 'threekit_enqueue_css');
+  if (wp_is_mobile()) {
+    // add player after single_excerpt(short description) and single_meta
+    add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_clara', 25 );
+  }
+  else {
+    add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_clara', 10 );
+    add_action( 'wp_enqueue_scripts', 'threekit_enqueue_css');
+  }
 }
 
 if ( ! function_exists(woocommerce_template_single_clara) ) {
