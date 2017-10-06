@@ -29,7 +29,8 @@ function loadPlayer(scene, params) {
   for (var i = presets.length - 1; i >= 0; i--) {
     if (params.product_name.toLowerCase().includes(presets[i].name.toLowerCase())) {
       if (!window.clara) {
-        document.getElementById('clara-embed').style.height = "39%";
+        document.getElementById('clara-embed').style.height = "200px";
+        document.getElementById('clara-embed').style.width = "39%";
         var clara = claraplayer('clara-embed');
 
         clara.on('loaded', () => {
