@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Threekit for PaletteEnvy
  * Description: Threekit for PaletteEnvy
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Exocortex
  * Author URI: exocortex.com
  * Developer: Exocortex
@@ -49,7 +49,7 @@ if ( ! function_exists(woocommerce_template_single_clara) ) {
 if( ! function_exists(threekit_enqueue_css) ) {
   function threekit_enqueue_css() {
     //wp_register_style( 'threekit-woocommerce-css', rtrim(plugin_dir_path(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
-    wp_enqueue_style( 'threekit-woocommerce-css', rtrim(plugin_dir_url(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
+    wp_enqueue_style( 'threekitwoocommercecss', rtrim(plugin_dir_url(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
   }
 }
 
