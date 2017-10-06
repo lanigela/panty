@@ -27,7 +27,7 @@ if ( in_array( 'woocommerce/woocommerce.php', $active_plugins) ) {
   // Put your plugin code here
   // add player after single_excerpt(short description) and single_meta
   add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_clara', 10 );
-  add_filter( 'wp_enqueue_scripts', 'threekit_enqueue_css');
+  add_action( 'wp_enqueue_scripts', 'threekit_enqueue_css');
 }
 
 if ( ! function_exists(woocommerce_template_single_clara) ) {
@@ -47,7 +47,7 @@ if ( ! function_exists(woocommerce_template_single_clara) ) {
 }
 
 if( ! function_exists(threekit_enqueue_css) ) {
-  function threekit_enqueue_css($styles) {
+  function threekit_enqueue_css() {
     //wp_register_style( 'threekit-woocommerce-css', rtrim(plugin_dir_path(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
     wp_enqueue_style( 'threekit-woocommerce-css', rtrim(plugin_dir_path(__FILE__),'/') . '/assets/css/ClaraForPaletteenvy.css' );
     return $styles;
