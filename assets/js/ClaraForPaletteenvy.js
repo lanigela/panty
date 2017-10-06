@@ -31,6 +31,7 @@ function loadPlayer(scene, params) {
       if (!window.clara) {
         document.getElementById('clara-embed').style.height = "450px";
         document.getElementById('clara-embed').style.width = "48%";
+        document.getElementById('clara-embed').style.padding-bottom = "20px";
         var clara = claraplayer('clara-embed');
 
         clara.on('loaded', () => {
