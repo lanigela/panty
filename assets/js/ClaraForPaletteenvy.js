@@ -51,28 +51,28 @@ function loadPlayer(scene, params) {
 
           clara.commands.setCommandOptions('orbit', {
             turnTable: true,
-            mobileOnly: true,
+            mobileOnly: false,
             touchVerticalDefault: true
           });
 
-          clara.commands.addCommand({
-            enabled: true,
-            active: true,
-            tool: {
-              drag: function(ev){
-                var bb = ev.rect;
-                return {
-                  momentum: false,
-                  handle: function(ev){
-                    var degrees = 360*ev.deltaX/bb.width;
-                    var rotation = clara.scene.get({name:'leggings_v5', plug: 'Transform', property: 'rotation'});
+          // clara.commands.addCommand({
+          //   enabled: true,
+          //   active: true,
+          //   tool: {
+          //     drag: function(ev){
+          //       var bb = ev.rect;
+          //       return {
+          //         momentum: false,
+          //         handle: function(ev){
+          //           var degrees = 360*ev.deltaX/bb.width;
+          //           var rotation = clara.scene.get({name:'leggings_v5', plug: 'Transform', property: 'rotation'});
 
-                    clara.scene.set({name:'leggings_v5', plug: 'Transform', property: 'rotation'},{x: rotation.x, y:rotation.y+degrees, z:rotation.z});
-                  }
-                };
-              },
-            }
-          }, 'planeRotate');
+          //           clara.scene.set({name:'leggings_v5', plug: 'Transform', property: 'rotation'},{x: rotation.x, y:rotation.y+degrees, z:rotation.z});
+          //         }
+          //       };
+          //     },
+          //   }
+          // }, 'planeRotate');
 
           clara.configuration.applyPreset(presets[i].name);
 
