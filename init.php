@@ -27,7 +27,7 @@ if ( in_array( 'woocommerce/woocommerce.php', $active_plugins) ) {
   // Put your plugin code here
   // add player after single_excerpt(short description) and single_meta
   //add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_clara', 25 );
-  add_filter( 'woocommerce_single_product_image_thumbnail_html', 'woocommerce_template_single_clara_filter' );
+  add_filter( 'woocommerce_single_product_image_thumbnail_html', 'woocommerce_template_single_clara_filter', 10, 2 );
 }
 
 if ( ! function_exists(woocommerce_template_single_clara) ) {
